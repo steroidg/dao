@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-# Set the name of the prank project
+# Set the name of the project
 project(dao)
 
 # setup version numbers
@@ -10,6 +10,7 @@ set(VERSION_PATCH 1)
 
 # find the libraries we want
 find_package(SDL REQUIRED)
+find_package(SDL_image REQUIRED)
 
 # use the constants defined for packages to setup compiler options
 include_directories(${SDL_INCLUDE_DIR})
@@ -25,7 +26,7 @@ add_executable( dao
     )
 
 # link against the sdl libraries
-target_link_libraries( dao ${SDL_LIBRARY})
+target_link_libraries( dao ${SDL_LIBRARY} ${SDLIMAGE_LIBRARY})
 
 
 # set any compiler options
